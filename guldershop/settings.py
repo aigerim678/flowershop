@@ -111,6 +111,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = 'static/'
+STATIC_ROOT = BASE_DIR / 'static'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
@@ -129,3 +130,4 @@ STRIPE_PUBLISHABLE_KEY = 'pk_test_51QBxMeKaqH7mPytGQFnhStD7poizsaFuVlIz2y69lf6lT
 STRIPE_SECRET_KEY = 'sk_test_51QBxMeKaqH7mPytGf16jjtOSF5zOeNbHeDeygqtocksubTO8CqloqfFm4OsdkXIzFjfDgJ8AAqXlppXRJCzH0GCy00ozFFyUPq'
 STRIPE_API_VERSION = '2022-08-01'
 STRIPE_WEBHOOK_SECRET = 'whsec_64c673dcec57565bc24c3f79ab087ebfefe7a7f305326512aecb80e047ad1887'
+
