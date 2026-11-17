@@ -24,10 +24,45 @@ class Category(models.Model):
     
     
 
+class Collection(models.Model):
+    """A curated seasonal series of bouquets, e.g. "Collection 01 — Velvet Reverie"."""
+    number = models.PositiveSmallIntegerField(unique=True)
+    name = models.CharField(max_length=200)
+    slug = models.SlugField(max_length=200, unique=True)
+    description = models.TextField(blank=True)
+
+    class Meta:
+        ordering = ['number']
+
+    def __str__(self):
+        return f'Collection {self.number:02d} — {self.name}'
+
+    def get_absolute_url(self):
+        return reverse('shop:product_list_by_collection',
+                       args=[self.slug])
+
+    @property
+    def roman(self):
+        """Collection number as a Roman numeral: the site presents collections as 'Part I, II…'."""
+        numerals = [(10, 'X'), (9, 'IX'), (5, 'V'), (4, 'IV'), (1, 'I')]
+        n, out = self.number, ''
+        for value, letters in numerals:
+            while n >= value:
+                out += letters
+                n -= value
+        return out
+
+
 class Product(models.Model):
     category = models.ForeignKey(Category,
                                  related_name='products',
                                  on_delete=models.CASCADE)
+    collection = models.ForeignKey(Collection,
+                                   related_name='products',
+                                   on_delete=models.SET_NULL,
+                                   null=True,
+                                   blank=True)
+    mood = models.CharField(max_length=100, blank=True)
     name = models.CharField(max_length=200)
     slug = models.SlugField(max_length=200)
     image = models.ImageField(upload_to='products/%Y/%m/%d',

@@ -1,31 +1,44 @@
 {% extends "shop/base.html" %}
-{% load static %}
 
-{% block title %}
-  {{ product.name }}
-{% endblock %}
+{% block title %}{{ product.name|lower }}{% endblock %}
 
 {% block content %}
-  <div class="product_detail">
-    <div class="product_img">
-      <img src="{% if product.image %}{{ product.image.url }}{% else %}
-      {% static "img/no_image.png" %}{% endif %}">
+  <div class="detail">
+    <div class="window">
+      <div class="window-bar">
+        <span class="controls"><i></i><i></i><i></i></span>
+        <span>{% if product.collection %}collection {{ product.collection.number|stringformat:"02d" }}{% endif %}</span>
+      </div>
+      <div class="cam">
+        {% if product.image %}<img src="{{ product.image.url }}" alt="{{ product.name }}">{% endif %}
+        <span class="rec">REC</span>
+        <span class="stamp">{{ product.created|date:"M d Y"|upper }}</span>
+      </div>
     </div>
 
-    <div class="product_info">
+    <div>
+      <div class="breadcrumbs">
+        <a href="{% url 'shop:product_list' %}">collections</a> /
+        {% if product.collection %}<a href="{{ product.collection.get_absolute_url }}">{{ product.collection.name|lower }}</a> /{% endif %}
+        <a href="{{ product.category.get_absolute_url }}">{{ product.category.name|lower }}</a>
+      </div>
       <h1>{{ product.name }}</h1>
-      <h2>
-        <a href="{{ product.category.get_absolute_url }}">
-          {{ product.category }}
-        </a>
-      </h2>
-      <p class="price">₸{{ product.price }}</p>
-      <form action="{% url 'cart:cart_add' product.id %}" method="post">
-        {{ cart_product_form }}
+      <span class="price">₸{{ product.price|floatformat:"0g" }}</span>
+      {% if product.description %}
+        <div class="description">{{ product.description|linebreaks }}</div>
+      {% endif %}
+      <form action="{% url 'cart:cart_add' product.id %}" method="post" class="add-form">
         {% csrf_token %}
-        <input type="submit" value="Add to cart">
+        {{ cart_product_form.quantity }}
+        {{ cart_product_form.override }}
+        <input type="submit" value="add to bag ✿">
       </form>
-      {{ product.description|linebreaks }}
+      <ul class="perks">
+        <li><span>mood</span><span>{{ product.mood|default:"—"|lower }}</span></li>
+        <li><span>flowers</span><span>{{ product.category.name|lower }}</span></li>
+        <li><span>delivery</span><span>same day in Almaty</span></li>
+        <li><span>payment</span><span>Stripe</span></li>
+      </ul>
     </div>
   </div>
 {% endblock %}

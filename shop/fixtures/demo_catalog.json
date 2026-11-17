@@ -1,0 +1,649 @@
+[
+  {
+    "model": "shop.category",
+    "pk": 1,
+    "fields": {
+      "name": "Callas",
+      "slug": "callas"
+    }
+  },
+  {
+    "model": "shop.category",
+    "pk": 2,
+    "fields": {
+      "name": "Lilies",
+      "slug": "lilies"
+    }
+  },
+  {
+    "model": "shop.category",
+    "pk": 3,
+    "fields": {
+      "name": "Roses",
+      "slug": "roses"
+    }
+  },
+  {
+    "model": "shop.category",
+    "pk": 4,
+    "fields": {
+      "name": "Peonies",
+      "slug": "peonies"
+    }
+  },
+  {
+    "model": "shop.category",
+    "pk": 5,
+    "fields": {
+      "name": "Anemones",
+      "slug": "anemones"
+    }
+  },
+  {
+    "model": "shop.category",
+    "pk": 6,
+    "fields": {
+      "name": "Tulips",
+      "slug": "tulips"
+    }
+  },
+  {
+    "model": "shop.category",
+    "pk": 7,
+    "fields": {
+      "name": "Wildflowers",
+      "slug": "wildflowers"
+    }
+  },
+  {
+    "model": "shop.collection",
+    "pk": 1,
+    "fields": {
+      "number": 1,
+      "name": "Velvet Reverie",
+      "slug": "velvet-reverie",
+      "description": "Dark, velvety bouquets in burgundy, plum and antique rose — callas, speckled lilies, peonies and glossy black anthuriums, romantic and a little mysterious, like an old master's still life."
+    }
+  },
+  {
+    "model": "shop.collection",
+    "pk": 2,
+    "fields": {
+      "number": 2,
+      "name": "Tender Ruins",
+      "slug": "tender-ruins",
+      "description": "Airy, weightless compositions in muted lilac, cream and fading pink, with unusual petal shapes — beauty that is softly falling apart."
+    }
+  },
+  {
+    "model": "shop.product",
+    "pk": 2,
+    "fields": {
+      "category": 2,
+      "collection": 1,
+      "mood": "Devotion",
+      "name": "Love Letters",
+      "slug": "love-letters",
+      "image": "products/velvet-reverie/love-letters.jpg",
+      "description": "Speckled oriental lilies against deep plum callas, berried branches and cascading amaranthus. Written in velvet and ink — a bouquet that says everything you couldn't.",
+      "price": "32000.00",
+      "available": true,
+      "created": "2026-11-17T12:00:00Z",
+      "updated": "2026-11-17T12:00:00Z"
+    }
+  },
+  {
+    "model": "shop.product",
+    "pk": 3,
+    "fields": {
+      "category": 3,
+      "collection": 1,
+      "mood": "Tender darkness",
+      "name": "Fallen Angel",
+      "slug": "fallen-angel",
+      "image": "products/velvet-reverie/fallen-angel.jpg",
+      "description": "Dusty mauve garden roses, wine-red anemones and soft lisianthus, loosened with wild greenery. Tender and romantic, with just a touch of darkness.",
+      "price": "26000.00",
+      "available": true,
+      "created": "2026-11-17T12:00:00Z",
+      "updated": "2026-11-17T12:00:00Z"
+    }
+  },
+  {
+    "model": "shop.product",
+    "pk": 4,
+    "fields": {
+      "category": 2,
+      "collection": 1,
+      "mood": "Melancholy",
+      "name": "Ophelia",
+      "slug": "ophelia",
+      "image": "products/velvet-reverie/ophelia.jpg",
+      "description": "Spotted lilies, hellebores and ivory callas drifting through berries and Queen Anne's lace. A painterly, melancholic bouquet straight out of an old master's still life.",
+      "price": "30000.00",
+      "available": true,
+      "created": "2026-11-17T12:00:00Z",
+      "updated": "2026-11-17T12:00:00Z"
+    }
+  },
+  {
+    "model": "shop.product",
+    "pk": 5,
+    "fields": {
+      "category": 4,
+      "collection": 1,
+      "mood": "Passion",
+      "name": "Dark Desire",
+      "slug": "dark-desire",
+      "image": "products/velvet-reverie/dark-desire.jpg",
+      "description": "Deep burgundy peonies with sweet peas, scabiosa and speckled orchids. Lush, heady and unapologetically sensual.",
+      "price": "35000.00",
+      "available": true,
+      "created": "2026-11-17T12:00:00Z",
+      "updated": "2026-11-17T12:00:00Z"
+    }
+  },
+  {
+    "model": "shop.product",
+    "pk": 6,
+    "fields": {
+      "category": 1,
+      "collection": 1,
+      "mood": "Forever",
+      "name": "Eternal Bloom",
+      "slug": "eternal-bloom",
+      "image": "products/velvet-reverie/eternal-bloom.jpg",
+      "description": "White anemones, burgundy callas and a single antique rose, wrapped in black with a satin ribbon. A quiet promise that lasts.",
+      "price": "24000.00",
+      "available": true,
+      "created": "2026-11-17T12:00:00Z",
+      "updated": "2026-11-17T12:00:00Z"
+    }
+  },
+  {
+    "model": "shop.product",
+    "pk": 7,
+    "fields": {
+      "category": 5,
+      "collection": 2,
+      "mood": "Nostalgia",
+      "name": "Faded Poetry",
+      "slug": "faded-poetry",
+      "image": "products/tender-ruins/faded-poetry.jpg",
+      "description": "Lilac-edged anemones, dusty pink garden roses and violet clematis in sheer cream paper, with berried twigs reaching out like lines of an old poem.",
+      "price": "24000.00",
+      "available": true,
+      "created": "2026-11-17T12:00:00Z",
+      "updated": "2026-11-17T12:00:00Z"
+    }
+  },
+  {
+    "model": "shop.product",
+    "pk": 8,
+    "fields": {
+      "category": 3,
+      "collection": 2,
+      "mood": "Quiet love",
+      "name": "Love in Silence",
+      "slug": "love-in-silence",
+      "image": "products/tender-ruins/love-in-silence.jpg",
+      "description": "Soft pink garden roses, lavender lisianthus and pale anemones, with a few wine-coloured clematis stars. A bouquet for the feelings you keep to yourself.",
+      "price": "26000.00",
+      "available": true,
+      "created": "2026-11-17T12:00:00Z",
+      "updated": "2026-11-17T12:00:00Z"
+    }
+  },
+  {
+    "model": "shop.product",
+    "pk": 9,
+    "fields": {
+      "category": 4,
+      "collection": 2,
+      "mood": "Unspoken feelings",
+      "name": "Almost Yours",
+      "slug": "almost-yours",
+      "image": "products/tender-ruins/almost-yours.jpg",
+      "description": "Blush peonies, ivory ranunculus and ruffled sweet peas with wild grasses and eucalyptus. Light, hesitant and almost-confessed.",
+      "price": "29000.00",
+      "available": true,
+      "created": "2026-11-17T12:00:00Z",
+      "updated": "2026-11-17T12:00:00Z"
+    }
+  },
+  {
+    "model": "shop.product",
+    "pk": 10,
+    "fields": {
+      "category": 3,
+      "collection": 2,
+      "mood": "Warm memories",
+      "name": "Sunday Letters",
+      "slug": "sunday-letters",
+      "image": "products/tender-ruins/sunday-letters.jpg",
+      "description": "Mauve roses, dewy white anemones, lilac delphinium and clematis tied with frayed silk. Like rereading old letters on a slow Sunday morning.",
+      "price": "25000.00",
+      "available": true,
+      "created": "2026-11-17T12:00:00Z",
+      "updated": "2026-11-17T12:00:00Z"
+    }
+  },
+  {
+    "model": "shop.product",
+    "pk": 11,
+    "fields": {
+      "category": 6,
+      "collection": 2,
+      "mood": "Sweet sorrow",
+      "name": "A Little Heartache",
+      "slug": "a-little-heartache",
+      "image": "products/tender-ruins/a-little-heartache.jpg",
+      "description": "Peach garden roses, antique-pink carnations, hellebores and drooping parrot tulips among blossoming branches. Beautiful, a little sad, and very honest.",
+      "price": "27000.00",
+      "available": true,
+      "created": "2026-11-17T12:00:00Z",
+      "updated": "2026-11-17T12:00:00Z"
+    }
+  },
+  {
+    "model": "shop.product",
+    "pk": 12,
+    "fields": {
+      "category": 7,
+      "collection": 2,
+      "mood": "Anticipation of love",
+      "name": "Before We Met",
+      "slug": "before-we-met",
+      "image": "products/tender-ruins/before-we-met.jpg",
+      "description": "White cosmos, blush garden roses, sweet peas and scabiosa spilling out of crinkled paper. Wild and full of the feeling that something lovely is about to begin.",
+      "price": "23000.00",
+      "available": true,
+      "created": "2026-11-17T12:00:00Z",
+      "updated": "2026-11-17T12:00:00Z"
+    }
+  },
+  {
+    "model": "shop.category",
+    "pk": 10,
+    "fields": {
+      "name": "Anthuriums",
+      "slug": "anthuriums"
+    }
+  },
+  {
+    "model": "shop.category",
+    "pk": 11,
+    "fields": {
+      "name": "Orchids",
+      "slug": "orchids"
+    }
+  },
+  {
+    "model": "shop.product",
+    "pk": 16,
+    "fields": {
+      "category": 10,
+      "collection": 1,
+      "mood": "Forbidden",
+      "name": "Dark Eden",
+      "slug": "dark-eden",
+      "image": "products/velvet-reverie/dark-eden.jpg",
+      "description": "Glossy black anthuriums, burgundy lilies and button chrysanthemums with eucalyptus and trailing amaranthus. Strange, sculptural and impossible to look away from.",
+      "price": "38000.00",
+      "available": true,
+      "created": "2026-11-17T12:00:00Z",
+      "updated": "2026-11-17T12:00:00Z"
+    }
+  },
+  {
+    "model": "shop.category",
+    "pk": 12,
+    "fields": {
+      "name": "Hydrangeas",
+      "slug": "hydrangeas"
+    }
+  },
+  {
+    "model": "shop.category",
+    "pk": 13,
+    "fields": {
+      "name": "Ranunculus",
+      "slug": "ranunculus"
+    }
+  },
+  {
+    "model": "shop.collection",
+    "pk": 4,
+    "fields": {
+      "number": 3,
+      "name": "First Love",
+      "slug": "first-love",
+      "description": "Soft blush, peach, butter yellow and a touch of baby blue in sunlit paper — light, a little shy and full of hope, like the first time you fell for someone."
+    }
+  },
+  {
+    "model": "shop.product",
+    "pk": 19,
+    "fields": {
+      "category": 6,
+      "collection": 4,
+      "mood": "Nervous excitement",
+      "name": "Butterflies",
+      "slug": "butterflies",
+      "image": "products/first-love/butterflies.jpg",
+      "description": "Ivory tulips, pink sweet peas and lilac lisianthus with lacy Queen Anne's lace in blush paper. Exactly how it feels when they text you back.",
+      "price": "21000.00",
+      "available": true,
+      "created": "2026-11-17T12:00:00Z",
+      "updated": "2026-11-17T12:00:00Z"
+    }
+  },
+  {
+    "model": "shop.product",
+    "pk": 20,
+    "fields": {
+      "category": 2,
+      "collection": 4,
+      "mood": "Romance",
+      "name": "Dear Juliet",
+      "slug": "dear-juliet",
+      "image": "products/first-love/dear-juliet.jpg",
+      "description": "White lilies, a peach dahlia and ruffled pink carnations with astilbe and fern. A classic love story — tender, a little theatrical, and completely sincere.",
+      "price": "24000.00",
+      "available": true,
+      "created": "2026-11-17T12:00:00Z",
+      "updated": "2026-11-17T12:00:00Z"
+    }
+  },
+  {
+    "model": "shop.product",
+    "pk": 21,
+    "fields": {
+      "category": 4,
+      "collection": 4,
+      "mood": "Shyness",
+      "name": "Blushing",
+      "slug": "blushing",
+      "image": "products/first-love/blushing.jpg",
+      "description": "Creamy peonies, dusty pink garden roses and apricot ranunculus with sweet peas and baby's breath. Soft, rosy and impossible not to smile at.",
+      "price": "26000.00",
+      "available": true,
+      "created": "2026-11-17T12:00:00Z",
+      "updated": "2026-11-17T12:00:00Z"
+    }
+  },
+  {
+    "model": "shop.product",
+    "pk": 22,
+    "fields": {
+      "category": 12,
+      "collection": 4,
+      "mood": "Daydreaming",
+      "name": "Blue Valentine",
+      "slug": "blue-valentine",
+      "image": "products/first-love/blue-valentine.jpg",
+      "description": "A cloud of pale blue hydrangea with blush garden roses, white cosmos, delphinium and trailing ivy. For someone who lives a little bit in the clouds.",
+      "price": "25000.00",
+      "available": true,
+      "created": "2026-11-17T12:00:00Z",
+      "updated": "2026-11-17T12:00:00Z"
+    }
+  },
+  {
+    "model": "shop.product",
+    "pk": 23,
+    "fields": {
+      "category": 13,
+      "collection": 4,
+      "mood": "Happiness",
+      "name": "Golden Hour",
+      "slug": "golden-hour",
+      "image": "products/first-love/golden-hour.jpg",
+      "description": "Butter-yellow ranunculus, blush peonies and white stock with olive branches, wrapped in raw linen paper. Warm light, long evenings, easy laughter.",
+      "price": "23000.00",
+      "available": true,
+      "created": "2026-11-17T12:00:00Z",
+      "updated": "2026-11-17T12:00:00Z"
+    }
+  },
+  {
+    "model": "shop.product",
+    "pk": 24,
+    "fields": {
+      "category": 3,
+      "collection": 4,
+      "mood": "Tenderness",
+      "name": "First Kiss",
+      "slug": "first-kiss",
+      "image": "products/first-love/first-kiss.jpg",
+      "description": "Peach garden roses, blush anemones and ivory spray roses with eucalyptus and sweet peas. Sweet, warm and a little breathless.",
+      "price": "22000.00",
+      "available": true,
+      "created": "2026-11-17T12:00:00Z",
+      "updated": "2026-11-17T12:00:00Z"
+    }
+  },
+  {
+    "model": "shop.category",
+    "pk": 14,
+    "fields": {
+      "name": "Amaryllis",
+      "slug": "amaryllis"
+    }
+  },
+  {
+    "model": "shop.collection",
+    "pk": 5,
+    "fields": {
+      "number": 4,
+      "name": "Strange Eden",
+      "slug": "strange-eden",
+      "description": "An all-green collection of amaryllis, anthuriums, parrot tulips and green orchids on stone and silk — strange, sculptural and quietly botanical."
+    }
+  },
+  {
+    "model": "shop.product",
+    "pk": 25,
+    "fields": {
+      "category": 14,
+      "collection": 5,
+      "mood": "Green daydreams",
+      "name": "Green Reverie",
+      "slug": "green-reverie",
+      "image": "products/strange-eden/green-reverie.jpg",
+      "description": "Veined white-and-green amaryllis, lime hydrangea and frilled green carnations with white larkspur, tied with olive silk. Calm, cool and dreamy.",
+      "price": "31000.00",
+      "available": true,
+      "created": "2026-11-17T12:00:00Z",
+      "updated": "2026-11-17T12:00:00Z"
+    }
+  },
+  {
+    "model": "shop.product",
+    "pk": 26,
+    "fields": {
+      "category": 14,
+      "collection": 5,
+      "mood": "Dangerous beauty",
+      "name": "Poison Ivy",
+      "slug": "poison-ivy",
+      "image": "products/strange-eden/poison-ivy.jpg",
+      "description": "Striped amaryllis, glossy green anthuriums, pale carnations and starry stephanotis on long trailing stems. Pretty — and just a little poisonous.",
+      "price": "33000.00",
+      "available": true,
+      "created": "2026-11-17T12:00:00Z",
+      "updated": "2026-11-17T12:00:00Z"
+    }
+  },
+  {
+    "model": "shop.product",
+    "pk": 27,
+    "fields": {
+      "category": 11,
+      "collection": 5,
+      "mood": "Stillness",
+      "name": "Moss & Marble",
+      "slug": "moss-and-marble",
+      "image": "products/strange-eden/moss-and-marble.jpg",
+      "description": "Green cymbidium orchids, ruffled parrot tulips, anthurium and chartreuse hydrangea with Queen Anne's lace. Soft moss against cold stone.",
+      "price": "34000.00",
+      "available": true,
+      "created": "2026-11-17T12:00:00Z",
+      "updated": "2026-11-17T12:00:00Z"
+    }
+  },
+  {
+    "model": "shop.product",
+    "pk": 28,
+    "fields": {
+      "category": 10,
+      "collection": 5,
+      "mood": "Hidden longing",
+      "name": "Secret Garden",
+      "slug": "secret-garden",
+      "image": "products/strange-eden/secret-garden.jpg",
+      "description": "Deep green anthuriums, parrot tulips and speckled orchids with hanging amaranthus and climbing vines. A hidden place only you know the way to.",
+      "price": "36000.00",
+      "available": true,
+      "created": "2026-11-17T12:00:00Z",
+      "updated": "2026-11-17T12:00:00Z"
+    }
+  },
+  {
+    "model": "shop.product",
+    "pk": 29,
+    "fields": {
+      "category": 6,
+      "collection": 5,
+      "mood": "Botanical romance",
+      "name": "Botanical Affair",
+      "slug": "botanical-affair",
+      "image": "products/strange-eden/botanical-affair.jpg",
+      "description": "Green parrot tulips, a pale anthurium and white sweet peas with green amaranthus and wild umbels. An old-fashioned romance, written in leaves.",
+      "price": "29000.00",
+      "available": true,
+      "created": "2026-11-17T12:00:00Z",
+      "updated": "2026-11-17T12:00:00Z"
+    }
+  },
+  {
+    "model": "shop.category",
+    "pk": 15,
+    "fields": {
+      "name": "Poppies",
+      "slug": "poppies"
+    }
+  },
+  {
+    "model": "shop.collection",
+    "pk": 6,
+    "fields": {
+      "number": 5,
+      "name": "Wild Poetry",
+      "slug": "wild-poetry",
+      "description": "Loose, hand-gathered bouquets of meadow flowers, poppies, grasses and climbing clematis, tied with raw linen — as if picked on a long walk and written down as a poem."
+    }
+  },
+  {
+    "model": "shop.product",
+    "pk": 30,
+    "fields": {
+      "category": 7,
+      "collection": 6,
+      "mood": "Carefree summer",
+      "name": "Meadow Whisper",
+      "slug": "meadow-whisper",
+      "image": "products/wild-poetry/meadow-whisper.jpg",
+      "description": "Daisies, cornflowers, bellflowers and Queen Anne's lace, loosely tied with linen ribbon. A summer meadow in the late-afternoon sun.",
+      "price": "19000.00",
+      "available": true,
+      "created": "2026-11-17T12:00:00Z",
+      "updated": "2026-11-17T12:00:00Z"
+    }
+  },
+  {
+    "model": "shop.product",
+    "pk": 31,
+    "fields": {
+      "category": 7,
+      "collection": 6,
+      "mood": "Tender nostalgia",
+      "name": "Forgotten Letters",
+      "slug": "forgotten-letters",
+      "image": "products/wild-poetry/forgotten-letters.jpg",
+      "description": "Lilac scabiosa, white cosmos, nodding clematis bells and feathery grasses in faded paper. Soft and wistful, like letters found in an old drawer.",
+      "price": "21000.00",
+      "available": true,
+      "created": "2026-11-17T12:00:00Z",
+      "updated": "2026-11-17T12:00:00Z"
+    }
+  },
+  {
+    "model": "shop.product",
+    "pk": 32,
+    "fields": {
+      "category": 15,
+      "collection": 6,
+      "mood": "Autumn melancholy",
+      "name": "Autumn Muse",
+      "slug": "autumn-muse",
+      "image": "products/wild-poetry/autumn-muse.jpg",
+      "description": "Terracotta and rust Icelandic poppies, a single ivory poppy, chamomile and autumn grasses on a bare branch. Warm, wild and a little bittersweet.",
+      "price": "23000.00",
+      "available": true,
+      "created": "2026-11-17T12:00:00Z",
+      "updated": "2026-11-17T12:00:00Z"
+    }
+  },
+  {
+    "model": "shop.product",
+    "pk": 33,
+    "fields": {
+      "category": 7,
+      "collection": 6,
+      "mood": "Quiet morning",
+      "name": "Silver Morning",
+      "slug": "silver-morning",
+      "image": "products/wild-poetry/silver-morning.jpg",
+      "description": "Silver dusty miller, white poppies, green hellebores and clematis in a stone urn, with drifting umbels and grasses. Cool, pale and calm as early light.",
+      "price": "24000.00",
+      "available": true,
+      "created": "2026-11-17T12:00:00Z",
+      "updated": "2026-11-17T12:00:00Z"
+    }
+  },
+  {
+    "model": "shop.product",
+    "pk": 34,
+    "fields": {
+      "category": 7,
+      "collection": 6,
+      "mood": "Freedom",
+      "name": "Untamed Heart",
+      "slug": "untamed-heart",
+      "image": "products/wild-poetry/untamed-heart.jpg",
+      "description": "Lilac, white poppies and purple clematis on long arching branches that go wherever they want. For a heart that refuses to be tamed.",
+      "price": "22000.00",
+      "available": true,
+      "created": "2026-11-17T12:00:00Z",
+      "updated": "2026-11-17T12:00:00Z"
+    }
+  },
+  {
+    "model": "shop.product",
+    "pk": 35,
+    "fields": {
+      "category": 7,
+      "collection": 6,
+      "mood": "Enchantment",
+      "name": "Secret Meadow",
+      "slug": "secret-meadow",
+      "image": "products/wild-poetry/secret-meadow.jpg",
+      "description": "Pink wild roses, spotted foxgloves, buttercups and fern in kraft paper, gathered at the edge of the woods. A hidden garden in full bloom.",
+      "price": "25000.00",
+      "available": true,
+      "created": "2026-11-17T12:00:00Z",
+      "updated": "2026-11-17T12:00:00Z"
+    }
+  }
+]
