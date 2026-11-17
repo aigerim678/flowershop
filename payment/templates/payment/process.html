@@ -1,44 +1,37 @@
 {% extends "shop/base.html" %}
-{% load static %}
 
 {% block title %}Pay your order{% endblock %}
 
 {% block content %}
-  <h1>Order summary</h1>
-  <table class="cart">
-    <thead>
-      <tr>
-        <th>Image</th>
-        <th>Product</th>
-        <th>Price</th>
-        <th>Quantity</th>
-        <th>Total</th>
-      </tr>
-    </thead>
-    <tbody>
+  <div class="page-head">
+    <p class="eyebrow">Step 2 of 2 · Payment</p>
+    <h1>Review & pay</h1>
+  </div>
+
+  <div class="cart-layout">
+    <div>
       {% for item in order.items.all %}
-        <tr class="row{% cycle "1" "2" %} roww">
-          <td>
-            <img src="{% if item.product.image %}{{ item.product.image.url }}
-            {% else %}{% static "img/no_image.png" %}{% endif %}">
-          </td>
-          <td>{{ item.product.name }}</td>
-          <td class="num">₸{{ item.price }}</td>
-          <td class="num">{{ item.quantity }}</td>
-          <td class="num">₸{{ item.get_cost }}</td>
-        </tr>
+        <div class="cart-row">
+          {% if item.product.image %}<img src="{{ item.product.image.url }}" alt="{{ item.product.name }}">{% else %}<span></span>{% endif %}
+          <div>
+            <div class="name">{{ item.product.name }}</div>
+            <div class="unit">{{ item.quantity }} × ₸{{ item.price|floatformat:"0g" }}</div>
+          </div>
+          <div class="row-total">₸{{ item.get_cost|floatformat:"0g" }}</div>
+        </div>
       {% endfor %}
-      <tr class="total">
-        <td>Total</td>
-        <td colspan="3">Price</td>
-        <td class="num">
-          ₸{{ order.get_total_cost }}
-        </td>
-      </tr>
-    </tbody>
-  </table>
-  <form action="{% url "payment:process" %}" method="post">
-    <input type="submit" value="Pay now">
-    {% csrf_token %}
-  </form>
+    </div>
+
+    <aside class="summary">
+      <h3>Order #{{ order.id }}</h3>
+      <div class="summary-line"><span>Deliver to</span><span>{{ order.first_name }} {{ order.last_name }}</span></div>
+      <div class="summary-line"><span></span><span>{{ order.address }}, {{ order.city }}</span></div>
+      <div class="summary-total"><span>Total</span><span>₸{{ order.get_total_cost|floatformat:"0g" }}</span></div>
+      <form action="{% url 'payment:process' %}" method="post">
+        {% csrf_token %}
+        <input type="submit" value="Pay with Stripe" class="btn-block">
+      </form>
+      <p class="note">Test mode — use card 4242 4242 4242 4242.</p>
+    </aside>
+  </div>
 {% endblock %}

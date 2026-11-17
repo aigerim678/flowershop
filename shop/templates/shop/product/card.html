@@ -1,0 +1,12 @@
+<a href="{{ product.get_absolute_url }}" class="card">
+  <div class="cam">
+    {% if product.image %}<img src="{{ product.image.url }}" alt="{{ product.name }}" loading="lazy">{% endif %}
+    <span class="stamp">{{ product.created|date:"M d Y"|upper }}</span>
+    <div class="play"><span>▶</span></div>
+  </div>
+  <div class="card-meta">
+    <span class="card-name">{{ product.name }}</span>
+    <span class="price">₸{{ product.price|floatformat:"0g" }}</span>
+  </div>
+  <div class="card-mood"><span class="no">{{ forloop.counter|stringformat:"02d" }}</span>{{ product.mood|default:product.category.name }}</div>
+</a>
