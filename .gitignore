@@ -1,6 +1,25 @@
+# Python
 venv/
-.pylintrc
+.venv/
 __pycache__/
+*.pyc
+
+# Secrets
+.env
+
+# Local data
+db.sqlite3
+media/*
+!media/products/
+staticfiles/
+static/
+
+# IDE
+.pylintrc
 .vscode
 .idea
 cache/
+.DS_Store
+
+# Local README preview
+docs/.readme-preview.html

@@ -1,0 +1,9 @@
+venv
+.venv
+.git
+.idea
+.env
+db.sqlite3
+staticfiles
+static
+__pycache__

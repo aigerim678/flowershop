@@ -8,7 +8,7 @@ from .tasks import payment_completed
 @csrf_exempt
 def stripe_webhook(request):
     payload = request.body
-    sig_header = request.META['HTTP_STRIPE_SIGNATURE']
+    sig_header = request.META.get('HTTP_STRIPE_SIGNATURE', '')
     event = None
     
     try:
@@ -19,7 +19,7 @@ def stripe_webhook(request):
         )
     except ValueError as e:
         return HttpResponse(status=400)
-    except stripe.error.SignatureVerificationError as e:
+    except stripe.SignatureVerificationError as e:
         return HttpResponse(status=400)
     
     if event.type == 'checkout.session.completed':

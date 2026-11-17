@@ -1,0 +1,55 @@
+x-app: &app
+  build: .
+  env_file: .env
+  environment:
+    POSTGRES_DB: guldershop
+    POSTGRES_USER: postgres
+    POSTGRES_PASSWORD: postgres
+    POSTGRES_HOST: db
+    CELERY_BROKER_URL: amqp://guest:guest@rabbitmq:5672//
+  volumes:
+    - ./media:/app/media
+  depends_on:
+    db:
+      condition: service_healthy
+    rabbitmq:
+      condition: service_healthy
+
+services:
+  web:
+    <<: *app
+    command: >
+      sh -c "python manage.py migrate &&
+             python manage.py loaddata demo_catalog &&
+             python manage.py runserver 0.0.0.0:8000"
+    ports:
+      - "8000:8000"
+
+  celery:
+    <<: *app
+    command: celery -A guldershop worker -l info
+
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: guldershop
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      retries: 10
+
+  rabbitmq:
+    image: rabbitmq:3-management-alpine
+    ports:
+      - "15672:15672"
+    healthcheck:
+      test: ["CMD", "rabbitmq-diagnostics", "-q", "ping"]
+      interval: 10s
+      retries: 10
+
+volumes:
+  pgdata:
